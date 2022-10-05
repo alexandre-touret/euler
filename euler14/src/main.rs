@@ -34,15 +34,15 @@ fn apply_sequence(item: SequenceItem ) -> SequenceItem {
 
 fn main() {
     let mut max= SequenceItem{number:0,iteration:0};
-    let mut maxIndex = 1;
+    let mut max_index = 1;
     for i in 1..1_000_000{
         let item = apply_sequence(SequenceItem { number: i, iteration: 1 });
         if item.iteration>max.iteration {
             max = SequenceItem{number:item.number,iteration:item.iteration};
-            maxIndex = i;
+            max_index = i;
         }
     }
     let max_number= max.number;
     let max_iteration = max.iteration;
-    println!(" Max Sequence: {maxIndex:?} / {max_number:?} / {max_iteration:?} ");
+    println!(" Max Sequence: {max_index:?} / {max_number:?} / {max_iteration:?} ");
 }
